@@ -1,7 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400&display=swap');
+
 *, *::after, *::before {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+body {
+    background-color: #EFEFEF;
+    margin: 0;
+    font-family: 'Lato';
 }
 
 .container {
@@ -15,6 +23,7 @@
 .centralizar {
     justify-content: center;
     align-items: center;
+    display: flex;
 }
 
 .col-1, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-10, .col-11, .col-12 {
@@ -66,3 +75,4 @@
         margin-right: 0;
     }
 }
+
