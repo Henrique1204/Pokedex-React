@@ -8,10 +8,10 @@ export default (props) => {
 
     // Ai é por isso que a gente usa [valor, setValor], pq a gente diz pro javascript que os indicies iguais vão receber o retorno igual, no caso indice 0 recebe o valor da variavel e indice 1 o método, sq o nome que a gente coloca no [] passa a ser o nome que a gente vai usar pra se referenciar quando quiser o valor ou o método
     const [valor, setValor] = useState("");
-    const [titulo, setTitulo] = useState("Buscar Pokemon");
-    const [caminho, setCaminho] = useState("img/nao-encontrado.png");
-    const [altImg, setAltImg] = useState("Pokémon não encontrado");
-    const [legenda, setLegenda] = useState("Busque pelos primeiros #151 Pokémons!");
+    const [titulo, setTitulo] = useState(props.titulo);
+    const [caminho, setCaminho] = useState(props.caminho);
+    const [altImg, setAltImg] = useState(props.altImg);
+    const [legenda, setLegenda] = useState(props.legenda);
 
     // Aqui é a função que recebe o objeto com os dados do pokémon e coloca eles no html, a gente tá usando os set que a gente definiu lá em cima pra isso
     function renderizarPokemon(pokemon) {
