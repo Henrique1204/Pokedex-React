@@ -17,8 +17,8 @@ export default () => {
                 const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${valor}`);
                 const pokemon = await res.json();
 
-                setTitulo(pokemon.name);
-                setCaminho(`https://pokeres.bastionbot.org/images/pokemon/${pokemon.id}.png`);
+                setTitulo(pokemon.name.replace("-", " "));
+                setCaminho(`img/${pokemon.name}.png`);
                 setAltImg(pokemon.name);
 
         
@@ -33,7 +33,7 @@ export default () => {
                 } else {
                     setLegenda(
                         <span className="tipos">
-                            <span className={tipos[0]}>{`${tipos[0]} `}</span>/
+                            <span className={tipos[0]}>{`${tipos[0]} `}</span>|
                             <span className={tipos[1]}>{` ${tipos[1]}`}</span>
                         </span>
                     );
@@ -57,4 +57,3 @@ export default () => {
         </div>
     );
 }
-    
