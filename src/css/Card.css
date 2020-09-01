@@ -1,0 +1,48 @@
+.Card {
+    padding: 30px;
+    border-radius: 8px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    background-color: #FFF;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+}
+
+.Card h1 {
+    margin: 0;
+    font-size: 24px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+.Card .container-img {
+    width: 160px;
+    height: 160px;
+    padding: 20px;
+    border-radius: 50%;
+    margin: 30px auto;
+    box-shadow: 2px 2px 4px 2px rgba(0, 0, 0, 0.4);
+    overflow: hidden;
+}
+
+.Card .container-img img {
+    max-width: 100%;
+    display: block;
+}
+
+.Card .camposBusca {
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.Card label {
+    margin-bottom: 15px;
+    font-size: 18px;
+    text-align: center;
+}
+
+.Card input {
+    padding: 8px 15px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+    outline-color: rgba(0, 0, 0, 0.4);
+}
