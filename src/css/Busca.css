@@ -1,0 +1,11 @@
+.buscaContainer {
+    margin: 0 auto;
+    flex-direction: column;
+}
+
+.buscaContainer input {
+    padding: 8px 15px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+    outline-color: rgba(0, 0, 0, 0.4);
+}

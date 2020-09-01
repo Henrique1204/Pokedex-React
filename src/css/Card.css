@@ -29,20 +29,33 @@
     display: block;
 }
 
-.Card .camposBusca {
-    margin: 0 auto;
-    flex-direction: column;
-}
-
-.Card label {
+.Card p {
+    margin-top: 0;
     margin-bottom: 15px;
     font-size: 18px;
     text-align: center;
 }
 
-.Card input {
-    padding: 8px 15px;
-    border: 1px solid rgba(0, 0, 0, 0.4);
-    border-radius: 4px;
-    outline-color: rgba(0, 0, 0, 0.4);
+.Card .tipos {
+    color: #777;
+    text-align: center;
+    font-weight: bold;
+    text-transform: capitalize;
 }
+
+.Card .fire {color: #F62}
+.Card .grass  { color: #6F0 }
+.Card .electric  { color: #EA2 }
+.Card .water  { color: #20F }
+.Card .ground  { color: #BB0 }
+.Card .rock  { color: #770 }
+.Card .fairy  { color: #F99 }
+.Card .poison  { color: #B2F }
+.Card .bug  { color: #AC0 }
+.Card .dragon  { color: #079 }
+.Card .psychic  { color: #D08 }
+.Card .flying  { color: #AAC }
+.Card .fighting  { color: #B22 }
+.Card .normal  { color: #888 }
+.Card .ice  { color: #2AD }
+.Card .steel  { color: #B6B6B6 }
