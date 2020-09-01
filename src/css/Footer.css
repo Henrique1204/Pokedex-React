@@ -61,14 +61,12 @@ footer li > span::after {
 }
 
 @media only screen and (max-width: 979px) {
-    footer h1::after {
-        width: 200px;
-        height: 2px;
-        margin: 30px auto 0px;
-    }
-
     footer li {
         margin-top: 30px;
+    }
+
+    footer li a {
+        padding: 15px 8px;
     }
 
     footer li > span::after {
@@ -76,7 +74,23 @@ footer li > span::after {
         width: 80px;
         height: 2px;
         background-color: currentColor;
-        margin: 8px auto 2px;
+        margin: 15px auto 0;
         display: block;
+    }
+}
+
+@media only screen and (max-width: 739px) {
+    footer h1 {
+        font-size: 18px;
+    }
+
+    footer h1::after {
+        margin: 30px auto 15px;
+    }
+
+    footer .col-4 {
+        width: 50%;
+        margin-top: 15px;
+        margin-bottom: 15px;
     }
 }
