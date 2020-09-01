@@ -10,7 +10,8 @@ export default () => {
                 titulo={"Buscar Pokémon"} 
                 caminho={"img/nao-encontrado.png"} 
                 altImg={"Pokémon não encontrado"}
-                legenda={"Busque pelos primeiros #151 Pokémons!"}/>
+                legenda={"Busque pelos primeiros #151 Pokémons!"}
+                classes={"col-6"}/>
         </main>
     );
 }

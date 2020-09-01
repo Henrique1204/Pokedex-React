@@ -70,7 +70,7 @@ export default (props) => {
     }
 
     return (
-        <div className="col-6 Card">
+        <div className={`${props.classe} Card`}>
             {/* O h1 recebe o valor do titulo */}
             <h1>{titulo}</h1>
             
