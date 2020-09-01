@@ -11,8 +11,8 @@ export default () => {
             <Fragment>
                 <Header>
                     <ul className="centralizar">
-                        <li><Link to="/">Home</Link></li>
-                        <li><Link to="/pokedex">Pokedex</Link></li>
+                        <li><Link to="/"><span>Home</span></Link></li>
+                        <li><Link to="/pokedex"><span>Pokedex</span></Link></li>
                     </ul>
                 </Header>
                 
