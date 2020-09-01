@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Busca from "./Busca";
+import Condicional from "./Condicional"
 import "../css/Card.css";
 
-export default () => {
+export default (props) => {
     // useState é um função que retorna um Array, por isso o const [valor, setValor], pq a gente tá fazendo algo chamado "destruir", que no caso é, o array tem 2 indicies, 0 e 1, o useState retorna no indice 0 o valor da variável, e no indicie 1 ele retorna um método que atualiza o valor e faz o refresh, o parâmetro que vai no useState("esse aqui") é o valor inicial da variável.
 
     // Ai é por isso que a gente usa [valor, setValor], pq a gente diz pro javascript que os indicies iguais vão receber o retorno igual, no caso indice 0 recebe o valor da variavel e indice 1 o método, sq o nome que a gente coloca no [] passa a ser o nome que a gente vai usar pra se referenciar quando quiser o valor ou o método
@@ -81,7 +82,9 @@ export default () => {
             {/* Aqui recebe o texto inicial e os tipos depois de buscar o pokemon */}
             <p>{legenda}</p>
             {/* Aqui é o componente de busca, importa o input e o botão, pra eles a gente passa os métodos de atualizar o valor e o de buscar o pokemon */}
-            <Busca eventoChange={atualizarValor} eventoPrincipal={buscarPokemon} />
+            <Condicional condicao={props.isHome}>
+                <Busca eventoChange={atualizarValor} eventoPrincipal={buscarPokemon} />
+            </Condicional>
         </div>
     );
 }
