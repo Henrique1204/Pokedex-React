@@ -1,0 +1,15 @@
+.Pokedex {
+    padding: 0 60px;
+}
+
+.Pokedex .lista {
+    flex-wrap: wrap;
+}
+
+.Pokedex .lista li {
+    margin: 0 15px;
+}
+
+.Pokedex h1 {
+    text-align: center;
+}

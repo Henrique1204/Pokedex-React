@@ -72,7 +72,13 @@ export default (props) => {
     return (
         <div className={`${props.classe} Card`}>
             {/* O h1 recebe o valor do titulo */}
-            <h1>{titulo}</h1>
+            <Condicional condicao={props.isHome}>
+                <h1>{titulo}</h1>
+            </Condicional>
+            
+            <Condicional condicao={!props.isHome}>
+                <h2>{titulo}</h2>
+            </Condicional>
             
             <div className="container-img centralizar">
                 {/* A img recebe o caminho e alt */}
