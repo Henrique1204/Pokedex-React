@@ -1,12 +1,14 @@
 header {
     text-align: center;
-    background: #FFF;
+    background-image: linear-gradient(to bottom, #111, #222);
     padding: 30px 0px 15px;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+    letter-spacing: 1.5px;
 }
 
 header h1 {
     margin: 0;
+    color: #F8F8F8;
 }
 
 header h1::after {
@@ -16,6 +18,7 @@ header h1::after {
     background-color: currentColor;
     display: block;
     margin: 15px auto 0px;
+    color: #F8F8F8;
 }
 
 ul {
@@ -31,7 +34,7 @@ header li + li{
 header a {
     text-decoration: none;
     padding: 15px 8px;
-    color: inherit;
     font-weight: bold;
     display: block;
+    color: #F8F8F8;
 }

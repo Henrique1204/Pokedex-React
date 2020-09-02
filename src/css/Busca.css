@@ -21,14 +21,14 @@
     font-size: 18px;
     font-weight: bold;
     color: #FFF;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: #37C;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
     cursor: pointer;
     transition: all ease 0.3s;
 }
 
 .buscaContainer button:hover {
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: #15A;
 }
 
 @media only screen and (max-width: 979px) {
