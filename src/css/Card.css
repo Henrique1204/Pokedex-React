@@ -1,8 +1,9 @@
 .Card {
     padding: 30px;
     border-radius: 8px;
-    background-color: #FFF;
+    background-color: #F8F8F8;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
+    letter-spacing: 1.5px;
 }
 
 .Card h1, .Card h2 {
