@@ -61,12 +61,15 @@ export default (props) => {
             
             <Condicional condicao={!props.isHome}>
                 <h2>{titulo}</h2>
-                <p><span>{props.numero}</span></p>
             </Condicional>
             
             <div className="container-img centralizar">
                 <img src={caminho} alt={altImg}/>
             </div>
+
+            <Condicional condicao={!props.isHome}>
+                <p className="numero"><span>{props.numero}</span></p>
+            </Condicional>
 
             <p>{legenda}</p>
             <Condicional condicao={props.isHome}>

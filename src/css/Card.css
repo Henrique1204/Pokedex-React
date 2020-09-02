@@ -33,6 +33,16 @@
     text-align: center;
 }
 
+.Card .numero {
+    max-width: 60px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    margin: 0 auto 15px;
+    font-size: 16px;
+    color: #777;
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
 .Card .tipos {
     color: #777;
     text-align: center;
