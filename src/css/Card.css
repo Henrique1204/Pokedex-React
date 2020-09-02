@@ -23,8 +23,26 @@
 }
 
 .Card .container-img img {
+    margin: 0;
     max-width: 100%;
     display: block;
+}
+
+@keyframes girar {
+	from {
+		transform: rotate(0);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
+
+.Card.carregando .container-img{
+	padding: 0;
+}
+
+.Card.carregando .container-img img {
+	animation: girar 1s infinite;
 }
 
 .Card p {

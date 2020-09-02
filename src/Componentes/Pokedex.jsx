@@ -3,15 +3,19 @@ import Card from "./Card";
 import "../css/Pokedex.css";
 
 export default class Pokedex extends Component  {
+    estrutura = (
+        <li>
+            <Card isHome={false} classe="carregando" titulo="???" caminho="img/pokebola.png" altImg="Pokebola" numero="#???" legenda="???" />
+        </li>
+    );
+
     state = {
-        pokemons: []
+        pokemons: Array(151).fill(this.estrutura)
     }
 
     componentDidMount = async () => {
-        const numeroDex = 151;
-
-        for (let i = 1; i <= numeroDex; i++) {
-            const req = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`)
+        for(let i = 0; i < this.state.pokemons.length; i++) {
+            const req = await fetch(`https://pokeapi.co/api/v2/pokemon/${i + 1}`)
             const json = await req.json();
         
             const tipos = json.types.map((type) => type.type.name);
@@ -32,15 +36,19 @@ export default class Pokedex extends Component  {
                 );
             }
 
-            const pokemon = {
-                nome: json.name,
-                id: json.id,
-                numero: `#${json.id.toString().padStart(3, '0')}`,
-                tipos: tiposSpan
-            }
-
             const pokemons = [...this.state.pokemons];
-            pokemons.push(pokemon);
+            pokemons[i] = (
+                <li key={json.id}>
+                    <Card
+                        isHome={false}
+                        titulo={json.name}
+                        caminho={`img/${json.name}.png`}
+                        altImg={json.name}
+                        numero={`#${json.id.toString().padStart(3, '0')}`}
+                        legenda={tiposSpan}
+                    />
+                </li>
+            );
 
             this.setState({ pokemons });
         }
@@ -51,13 +59,7 @@ export default class Pokedex extends Component  {
             <main className="Pokedex">
                 <h1>Pokedex 1º Geração</h1>
                 <ul className="centralizar lista">
-                { this.state.pokemons.map((item) => {
-                        return (
-                            <li key={item.id}>
-                                <Card isHome={false} titulo={item.nome} caminho={`img/${item.nome}.png`} altImg={item.nome} numero={item.numero} legenda={item.tipos} />
-                            </li>
-                        );
-                    }) }
+                    {this.state.pokemons.map((item) => (item))}
                 </ul>
             </main>
         );
