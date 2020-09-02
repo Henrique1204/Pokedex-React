@@ -52,7 +52,7 @@ export default class Pokedex extends Component  {
             <main className="Pokedex">
                 <h1>Pokedex 1º Geração</h1>
                 <ul className="centralizar lista">
-                { this.state.pokemons.map((item) => {
+                { this.state.pokemons.sort((a, b) => a - b).map((item) => {
                         return (
                             <li key={item.id}>
                                 <Card isHome={false} titulo={item.nome} caminho={`img/${item.nome}.png`} altImg={item.nome} numero={item.numero} legenda={item.tipos} />

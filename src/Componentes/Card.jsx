@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Busca from "./Busca";
-import Condicional from "./Condicional"
+import Condicional from "./Condicional";
 import "../css/Card.css";
 
 export default (props) => {

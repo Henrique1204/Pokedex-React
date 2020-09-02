@@ -17,8 +17,8 @@ export default () => {
                 </Header>
                 
                 <Switch>
-                <Route path="/" exact component={Home}></Route>
-                <Route path="/pokedex" component={Pokedex}></Route>
+                    <Route path="/" exact component={Home}></Route>
+                    <Route path="/pokedex" component={Pokedex}></Route>
                 </Switch>
 
                 <Footer />

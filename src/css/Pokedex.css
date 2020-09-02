@@ -17,3 +17,15 @@
 .Pokedex .lista li {
     margin: 15px 15px 0;
 }
+
+@media only screen and (max-width: 979px) {
+    .Pokedex {
+        padding: 30px;
+    }
+}
+
+@media only screen and (max-width: 739px) {
+    .Pokedex {
+        padding: 15px;
+    }
+}
