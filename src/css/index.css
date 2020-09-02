@@ -35,6 +35,10 @@ a:hover span:after {
     transform: translate3d(0, 0, 0);
 }
 
+main {
+    padding: 60px 0;
+}
+
 .container {
     width: 960px;
     margin: 0 auto;
@@ -99,4 +103,3 @@ a:hover span:after {
         margin-right: 0;
     }
 }
-

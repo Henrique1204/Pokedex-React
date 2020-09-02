@@ -1,8 +1,6 @@
 .Card {
     padding: 30px;
     border-radius: 8px;
-    margin-top: 60px;
-    margin-bottom: 60px;
     background-color: #FFF;
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.4);
 }
@@ -30,8 +28,7 @@
 }
 
 .Card p {
-    margin-top: 0;
-    margin-bottom: 15px;
+    margin: 0;
     font-size: 18px;
     text-align: center;
 }

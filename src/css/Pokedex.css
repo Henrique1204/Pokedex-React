@@ -1,5 +1,12 @@
 .Pokedex {
-    padding: 0 60px;
+    padding: 60px;
+}
+
+.Pokedex h1 {
+    margin: 0 auto 15px;
+    text-align: center;
+    text-shadow: 2px 2px 2px #222;
+    color: #F4F4F4;
 }
 
 .Pokedex .lista {
@@ -7,9 +14,5 @@
 }
 
 .Pokedex .lista li {
-    margin: 0 15px;
-}
-
-.Pokedex h1 {
-    text-align: center;
+    margin: 15px 15px 0;
 }
