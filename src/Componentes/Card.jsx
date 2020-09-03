@@ -54,7 +54,7 @@ export default (props) => {
     }
 
     return (
-        <div className={`${props.classe} Card`}>
+        <div className={`${props.classes} Card`}>
             <Condicional condicao={props.isHome}>
                 <h1>{titulo}</h1>
             </Condicional>
