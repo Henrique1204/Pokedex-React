@@ -22,41 +22,54 @@ export default class Card extends Component {
 
     fetchPokemon = async () => {
         try {
-            for(let i = 1; i <= 151; i++) {
-                const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
-                const json = await res.json();
-        
-                const tipos = json.types.map((type) => type.type.name);
-                let tiposSpan;
-        
-                if (tipos.length === 1) {
-                    tiposSpan = (
-                        <span className="tipos">
-                            <span className={tipos[0]}>{tipos[0]}</span>
-                        </span>
-                    );
-                } else {
-                    tiposSpan = (
-                        <span className="tipos">
-                            <span className={tipos[0]}>{`${tipos[0]} `}</span>|
-                            <span className={tipos[1]}>{` ${tipos[1]}`}</span>
-                        </span>
-                    );
+            if(!localStorage.getItem("pokemons")) {
+                for(let i = 1; i <= 151; i++) {
+                    const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
+                    const json = await res.json();
+
+                    const pokemon = {
+                        nome: json.name,
+                        id: json.id,
+                        numero: `#${json.id.toString().padStart(3, '0')}`,
+                        tipos: json.types.map((type) => type.type.name)
+                    }
+            
+                    const pokemons = [...this.state.pokemons];
+                    pokemons.push(pokemon);
+                    this.setState({ pokemons });
                 }
-        
-                const pokemon = {
-                    nome: json.name,
-                    id: json.id,
-                    numero: `#${json.id.toString().padStart(3, '0')}`,
-                    tipos: tiposSpan
-                }
-        
-                const pokemons = [...this.state.pokemons];
-                pokemons.push(pokemon);
+
+                // Salvando dados localmente
+                const listaString = this.state.pokemons.map((item) => JSON.stringify(item));
+                const dadoStorage = listaString.join(".");
+
+                localStorage.setItem("pokemons", dadoStorage);
+            } else {
+                // Resgastando dados localmente
+                const listaString = localStorage.getItem("pokemons").split(".");
+                const pokemons = listaString.map((item) => JSON.parse(item));
+
                 this.setState({ pokemons });
             }
         } catch (erro) {
             alert(erro);
+        }
+    }
+
+    gerarTipos(tipos) {
+        if (tipos.length === 1) {
+            return (
+                <span className="tipos">
+                    <span className={tipos[0]}>{tipos[0]}</span>
+                </span>
+            );
+        } else {
+            return (
+                <span className="tipos">
+                    <span className={tipos[0]}>{`${tipos[0]} `}</span>|
+                    <span className={tipos[1]}>{` ${tipos[1]}`}</span>
+                </span>
+            );
         }
     }
 
@@ -67,7 +80,7 @@ export default class Card extends Component {
             caminho: `img/${pokemon.nome}.png`,
             altImg: pokemon.nome,
             numero: pokemon.numero,
-            legenda: pokemon.tipos
+            legenda: this.gerarTipos(pokemon.tipos)
         });
     }
 
