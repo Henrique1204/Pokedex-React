@@ -38,11 +38,11 @@
 	}
 }
 
-.Card.carregando .container-img{
+.Card.carregando .container-img, .Card.carregando-home .container-img{
 	padding: 0;
 }
 
-.Card.carregando .container-img img {
+.Card.carregando .container-img img, .Card.carregando-home .container-img img {
 	animation: girar 1s infinite;
 }
 
@@ -50,6 +50,14 @@
     margin: 0;
     font-size: 18px;
     text-align: center;
+}
+
+.Card.carregando-home p {
+    display: none;
+}
+
+.Card.erro .legenda {
+    color: #D55;
 }
 
 .Card .numero {
@@ -60,6 +68,10 @@
     font-size: 16px;
     color: #777;
     background-color: rgba(0, 0, 0, 0.1);
+}
+
+.Card.carregando-home .numero {
+    display: none;
 }
 
 .Card .tipos {
