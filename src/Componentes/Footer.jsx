@@ -11,7 +11,7 @@ export default () => {
                 <li className="col-4"><span>José Carlos</span> <a href="https://github.com/JoseCarlos69"><span>JoseCarlos69</span></a></li>
                 <li className="col-4"><span>Felipe Braga</span> <a href="https://github.com/obragaa"><span>obragaa</span></a></li>
                 <li className="col-4"><span>Geovanna Caserta</span> <a href="https://github.com/gkslima"><span>gkslima</span></a></li>
-                <li className="col-4"><span>Geovanne Sousa</span> <a href="https://github.com/henrique1204"><span>Neutro17</span></a></li>
+                <li className="col-4"><span>Geovanne Sousa</span> <a href="https://github.com/Neutro17"><span>Neutro17</span></a></li>
             </ul>
         </footer>
     )

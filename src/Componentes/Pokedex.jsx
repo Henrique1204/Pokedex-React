@@ -5,7 +5,7 @@ import "../css/Pokedex.css";
 export default class Pokedex extends Component  {
     estrutura = (
         <li>
-            <Card isHome={false} classe="carregando" titulo="???" caminho="img/pokebola.png" altImg="Pokebola" numero="#???" legenda="???" />
+            <Card isHome={false} classes="carregando" titulo="???" caminho="img/pokebola.png" altImg="Pokebola" numero="#???" legenda="???" />
         </li>
     );
 
