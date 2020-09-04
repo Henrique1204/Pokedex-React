@@ -60,23 +60,6 @@ export default class Card extends Component {
         }
     }
 
-    componentDidMount = async () => {
-        // Testa se tá na home por causa da animação
-        if (this.state.isHome) {
-            // Faz a requisição de todos os pokemons e espera ela ser completada
-            await this.fetchPokemon();
-
-            // Após carregar os itens remove a classe que que anima e troca os valores do card
-            const classes = this.state.classes.replace("carregando-home", "");
-            this.setState({
-                titulo: "Buscar Pokémons",
-                caminho: "img/nao-encontrado.png",
-                altImg: "Pokémon não encontrado",
-                classes
-            });
-        }
-    }
-
     renderizarPokemon = (pokemon) => {
         // Joga os valores no card
         this.setState({
@@ -86,6 +69,33 @@ export default class Card extends Component {
             numero: pokemon.numero,
             legenda: pokemon.tipos
         });
+    }
+
+    componentDidMount = async () => {
+        // Testa se tá na home por causa da animação
+        if (this.state.isHome) {
+            // Faz a requisição de todos os pokemons e espera ela ser completada
+            await this.fetchPokemon();
+
+            // Confere se tem dados no localStorage
+            if (localStorage["ultimaBusca"]) {
+                // Se tiver ele pega e joga na variável pokemon
+                const pokemon = localStorage["ultimaBusca"];
+                // Depois busca o pokemon que foi tirado do localStorage
+                this.buscarPokemon(pokemon);
+            } else {
+                // Mostra valores padrões
+                this.setState({
+                    titulo: "Buscar Pokémons",
+                    caminho: "img/nao-encontrado.png",
+                    altImg: "Pokémon não encontrado"
+                });
+            }
+
+            // Remove a animação de carregamento
+            const classes = this.state.classes.replace("carregando-home", "");
+            this.setState({ classes });
+        }
     }
 
     atualizarValor = (evento) => {
@@ -141,7 +151,11 @@ export default class Card extends Component {
         * então se o find retornar undefined ele cai no else
         */
         if (pokemon) {
+            // Renderiza o pokemon no card
             this.renderizarPokemon(pokemon);
+
+            // Salva no localStorage
+            localStorage["ultimaBusca"] = pokemon.nome;
         } else {
             // Adiciona a classe de erro e troca os valores dos elementos
             const classes = `${this.state.classes} erro`;
