@@ -11,14 +11,14 @@ export default () => {
             <Fragment>
                 <Header>
                     <ul className="centralizar">
-                        <li><Link to="/workshop-react-pokedex/"><span>Home</span></Link></li>
-                        <li><Link to="/workshop-react-pokedex/pokedex"><span>Pokedex</span></Link></li>
+                        <li><Link to="/"><span>Home</span></Link></li>
+                        <li><Link to="/pokedex"><span>Pokedex</span></Link></li>
                     </ul>
                 </Header>
                 
                 <Switch>
-                    <Route path="/workshop-react-pokedex/" exact component={Home}></Route>
-                    <Route path="/workshop-react-pokedex/pokedex" component={Pokedex}></Route>
+                    <Route path="/" exact component={Home}></Route>
+                    <Route path="/pokedex" component={Pokedex}></Route>
                 </Switch>
 
                 <Footer />
