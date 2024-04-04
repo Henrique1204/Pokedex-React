@@ -1,0 +1,227 @@
+{
+	"Create Component": {
+		"prefix": [
+			"component-init",
+			"mci"
+		],
+		"body": [
+			"import React from 'react';",
+			"\nexport interface IComponentName extends React.IDefaultProps {}",
+			"\nconst $1ComponentName: React.FC<IComponentName> = () => {",
+			"\treturn <></>;",
+			"};",
+			"\nexport default $1ComponentName;",
+			""
+		],
+		"description": "Create component with arrow function and IComponent typing."
+	},
+	"Create Context": {
+		"prefix": [
+			"context-init",
+			"mcti"
+		],
+		"body": [
+			"import React from 'react';",
+			"\nexport interface IContextState {}",
+			"\nexport type IPartialContextState = Partial<IContextState>;",
+			"\nexport interface IProviderNameProps {",
+			"\tinitialState: IPartialContextState;",
+			"\tchildren: React.ReactNode;",
+			"}",
+			"\nconst ContextName = React.createContext<IPartialContextState>({});",
+			"\nconst DEFAULT_STATE = {};",
+			"\nexport const ProviderName: React.FC<IProviderNameProps> = ({ children }) => {",
+			"\treturn <ContextName.Provider value={{}}>{children}</ContextName.Provider>;",
+			"};",
+			"\nexport default {",
+			"\tContext: ContextName,",
+			"\tProvider: ProviderName,",
+			"\tuseContextName: () => React.useContext(ContextName) as IContextState,",
+			"};",
+			""
+		],
+		"description": "Create component with arrow function and IComponent typing."
+	},
+	"Create Component with Styles": {
+		"prefix": [
+			"component-styles",
+			"mcs"
+		],
+		"body": [
+			"import React from 'react';",
+			"\nimport * as Styles from './index.styled';",
+			"\nexport interface IComponentName extends React.IDefaultProps {}",
+			"\nconst $1ComponentName: React.FC<IComponentName> = () => {",
+			"\treturn <></>;",
+			"};",
+			"\nexport default $1ComponentName;",
+			""
+		],
+		"description": "Create component with arrow function, IComponent typing and import of styles."
+	},
+	"Create Page": {
+		"prefix": [
+			"create-page",
+			"mcp"
+		],
+		"body": [
+			"import React from 'react';",
+			"\nconst $1PageName: React.FC = () => {",
+			"\treturn <></>;",
+			"};",
+			"\nexport default $1PageName;",
+			""
+		],
+		"description": "Create page example."
+	},
+	"Inicialize Router Component": {
+		"prefix": [
+			"route-init",
+			"mri"
+		],
+		"body": [
+			"import React from 'react';",
+			"import { Routes, Route } from 'react-router-dom';",
+			"\nimport { LazyRoute } from 'Components';",
+			"\nconst MyPages = {",
+			"\tPage: React.lazy(() => import('./index')),",
+			"};",
+			"\nconst RoutesName = () => {",
+			"\treturn (",
+			"\t\t<Routes>",
+			"\t\t\t<Route path='' element={<LazyRoute>{<MyPages.Page />}</LazyRoute>} />",
+			"\t\t</Routes>",
+			"\t);",
+			"};",
+			"\nexport default RoutesName;",
+			""
+		],
+		"description": "Start component for route of pages."
+	},
+	"Inicialize Styled Component": {
+		"prefix": [
+			"styled-init",
+			"msi"
+		],
+		"body": [
+			"import styled from 'styled-components';",
+			"\nexport const Container = styled.div`$1`;",
+			""
+		],
+		"description": "Start component styles."
+	},
+	"Inicialize Test Component": {
+		"prefix": [
+			"test-component",
+			"mtc"
+		],
+		"body": [
+			"import { render } from 'Tests/CustomRender';",
+			"\nimport ComponentName from '.';",
+			"\ndescribe('<ComponentName />', () => {",
+			"\tit('Testing render.', () => {",
+			"\t\trender(<ComponentName />);$1",
+			"\t});",
+			"});",
+			""
+		],
+		"description": "Start test of component."
+	},
+	"Create Test It for component": {
+		"prefix": [
+			"test-it-component",
+			"mtic"
+		],
+		"body": [
+			"it('$1', () => {",
+			"\trender($2);",
+			"});"
+		],
+		"description": "Create test it for component."
+	},
+	"Inicialize Test Hook": {
+		"prefix": [
+			"test-hook",
+			"mth"
+		],
+		"body": [
+			"import { renderHook } from 'Tests/CustomRender';",
+			"\nimport useHookName from '.';",
+			"\ndescribe('useHookName', () => {",
+			"\tit('Testing render.', () => {",
+			"\t\tconst { state } = renderHook<{}>(() => useHookName());",
+			"\t});",
+			"});",
+			""
+		],
+		"description": "Start test of Hook."
+	},
+	"Create Test It for hook": {
+		"prefix": [
+			"test-it-hook",
+			"mtih"
+		],
+		"body": [
+			"it('$1', () => {",
+			"\tconst { state } = renderHook<{}>(() => $2);",
+			"});"
+		],
+		"description": "Create test it for hook."
+	},
+	"Create docs for Component": {
+		"prefix": [
+			"doc-component",
+			"mdc"
+		],
+		"body": [
+			"---",
+			"name: ComponentName",
+			"route: /components/component-name",
+			"menu: Components",
+			"---",
+			"\nimport { Props } from 'docz';",
+			"\nimport ComponentName from './index.tsx';",
+			"import Playground from '../Playground/index.tsx';",
+			"\n# ComponentName",
+			"\n## Propriedades",
+			"\n<Props of={ComponentName} />",
+			"\n## Componente",
+			"\n<Playground>",
+			"\t<ComponentName />",
+			"</Playground>",
+			""
+		],
+		"description": "Create your component's documentation base."
+	},
+	"Create docs for Hooks": {
+		"prefix": [
+			"doc-hooks",
+			"mdh"
+		],
+		"body": [
+			"---",
+			"name: useMyHook",
+			"route: /hooks/my-hook",
+			"menu: Hooks",
+			"---",
+			"\n# useMyHook",
+			"\n...",
+			"\n## Como utilizar",
+			"\n...",
+			"\n## Parâmetros",
+			"\n...",
+			""
+		],
+		"description": "Create your hook's documentation base."
+	},
+	"Import styles": {
+		"prefix": [
+			"import-styles",
+			"mis"
+		],
+		"body": [
+			"import * as Styles from './index.styled';"
+		],
+		"description": "Import styles."
+	}
+}

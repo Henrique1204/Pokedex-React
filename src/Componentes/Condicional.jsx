@@ -1,8 +1,7 @@
 export default (props) => {
-    if (props.condicao){
-        return props.children;
-    }
-    else{
-        return "";
-    }
-}
+	if (props.condicao) {
+		return props.children;
+	} else {
+		return '';
+	}
+};
