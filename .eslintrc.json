@@ -1,5 +1,8 @@
 {
-  "extends": ["react-app", "react-app/jest"],
+  "extends": [
+    "react-app",
+    "react-app/jest"
+  ],
   "parserOptions": {
     "sourceType": "module"
   },
@@ -8,7 +11,12 @@
     "browser": true,
     "es6": true
   },
-  "plugins": ["import", "react", "react-hooks", "testing-library"],
+  "plugins": [
+    "import",
+    "react",
+    "react-hooks",
+    "testing-library"
+  ],
   "rules": {
     "keyword-spacing": 2,
     "react-hooks/rules-of-hooks": "off",

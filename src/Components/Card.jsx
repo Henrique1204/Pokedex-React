@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Busca from './Busca';
+import Busca from './SearchForm';
 import Condicional from './Condicional';
 import '../css/Card.css';
 
