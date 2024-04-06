@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import Busca from './Busca';
+
+import { SearchForm } from './SearchForm';
 import Condicional from './Condicional';
+
 import '../css/Card.css';
 
 export default class Card extends Component {
@@ -98,9 +100,7 @@ export default class Card extends Component {
 		}
 	};
 
-	atualizarValor = (evento) => {
-		const valor = evento.target.value;
-
+	atualizarValor = (valor) => {
 		/*
 		 * Isso aqui é uma validação pra ver se alguém tá digitando número maior que 151
 		 *
@@ -205,10 +205,10 @@ export default class Card extends Component {
 
 				<p className='legenda'>{this.state.legenda}</p>
 				<Condicional condicao={this.state.isHome}>
-					<Busca
-						valor={this.state.valor}
-						eventoChange={this.atualizarValor}
-						eventoPrincipal={this.eventoBusca}
+					<SearchForm
+						value={this.state.valor}
+						onChange={this.atualizarValor}
+						onSubmit={this.eventoBusca}
 					/>
 				</Condicional>
 			</div>

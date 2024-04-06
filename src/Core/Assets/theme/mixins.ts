@@ -39,7 +39,7 @@ export const mixins = {
 			margin-right: 10px;
 		`;
 	},
-	getContainerStyle: (columnNumber: number) => {
+	getContainerStyle: () => {
 		const defaultStyle = css`
 			margin: 0 auto;
 
@@ -66,11 +66,8 @@ export const mixins = {
 
 		const isTablet = window.innerWidth <= breakpoints.tablet.maxWidth;
 
-		const containerWidth =
-			containetWidths[isTablet ? 'tablet' : 'desktop'] * columnNumber;
-
 		return css`
-			width: ${containerWidth}px;
+			width: ${containetWidths[isTablet ? 'tablet' : 'desktop']}px;
 
 			${defaultStyle}
 		`;
