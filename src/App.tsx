@@ -2,6 +2,10 @@ import React from 'react';
 
 import { BrowserRouter, Route, Link, Routes } from 'react-router-dom';
 
+import { ThemeProvider } from 'styled-components';
+
+import theme from 'Core/Assets/theme';
+
 import Header from 'Components/Header';
 import Home from 'Components/Home';
 import Footer from 'Components/Footer';
@@ -9,8 +13,8 @@ import Pokedex from 'Components/Pokedex';
 
 export const App: IComponent = () => {
 	return (
-		<BrowserRouter>
-			<React.Fragment>
+		<ThemeProvider theme={theme}>
+			<BrowserRouter>
 				<Header>
 					<ul className='centralizar'>
 						<li>
@@ -32,7 +36,7 @@ export const App: IComponent = () => {
 				</Routes>
 
 				<Footer />
-			</React.Fragment>
-		</BrowserRouter>
+			</BrowserRouter>
+		</ThemeProvider>
 	);
 };
