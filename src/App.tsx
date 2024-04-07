@@ -8,7 +8,7 @@ import theme from 'Core/Assets/theme';
 
 import Header from 'Components/Header';
 import Home from 'Components/Home';
-import Footer from 'Components/Footer';
+import { Footer } from 'Components/Footer';
 import Pokedex from 'Components/Pokedex';
 
 import { GlobalStyle } from './styles';
