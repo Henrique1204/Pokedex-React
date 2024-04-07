@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { SearchForm } from '../SearchForm';
-import Condicional from '../Condicional';
+import { Show } from '../Show';
 
 import { CardProps } from './types';
 import * as Styles from './styles';
@@ -209,13 +209,13 @@ export const Card: IComponent<CardProps> = ({
 
 			<Styles.CardLabel>{label}</Styles.CardLabel>
 
-			<Condicional condicao={isHome}>
+			<Show isShowing={isHome}>
 				<SearchForm
 					value={searchValue}
 					onChange={atualizarValor}
 					onSubmit={eventoBusca}
 				/>
-			</Condicional>
+			</Show>
 		</Styles.Container>
 	);
 };
