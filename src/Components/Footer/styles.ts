@@ -1,5 +1,7 @@
 import styled, { css } from 'styled-components';
 
+import { Link } from '../Link';
+
 export const Container = styled.footer`
 	padding: 30px 0;
 
@@ -88,7 +90,7 @@ export const MemberName = styled.span`
 	}
 `;
 
-export const MemberGithubLink = styled.a`
+export const MemberGithubLink = styled(Link)`
 	padding: 8px;
 
 	font-size: 16px;

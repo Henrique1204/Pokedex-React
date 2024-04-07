@@ -13,7 +13,7 @@ export const Footer: IComponent = () => {
 				{TEAM_MEMBERS.map(({ name, github }) => (
 					<Styles.MemberItem>
 						<Styles.MemberName>{name}</Styles.MemberName>{' '}
-						<Styles.MemberGithubLink href={github.link}>
+						<Styles.MemberGithubLink href={github.link} target='_blank'>
 							<span>{github.user}</span>
 						</Styles.MemberGithubLink>
 					</Styles.MemberItem>

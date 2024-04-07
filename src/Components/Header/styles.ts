@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 
-import { Link } from 'react-router-dom';
+import { Link } from '../Link';
 
 export const Container = styled.header`
 	padding: 30px 0px 15px;
