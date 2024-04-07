@@ -1,9 +1,6 @@
 import { css } from 'styled-components';
 
-export const minWidth = (
-	min: number,
-	data: string | ReturnType<typeof css>
-) => {
+export const minWidth = (min: number, data: CSSText) => {
 	return css`
 		@media only screen and (min-width: ${min}px) {
 			${data}
@@ -11,10 +8,7 @@ export const minWidth = (
 	`;
 };
 
-export const maxWidth = (
-	max: number,
-	data: string | ReturnType<typeof css>
-) => {
+export const maxWidth = (max: number, data: CSSText) => {
 	return css`
 		@media only screen and (max-width: ${max}px) {
 			${data}
@@ -22,11 +16,7 @@ export const maxWidth = (
 	`;
 };
 
-export const customWidth = (
-	min: number,
-	max: number,
-	data: string | ReturnType<typeof css>
-) => {
+export const customWidth = (min: number, max: number, data: CSSText) => {
 	return css`
 		@media only screen and (min-width: ${min}px and max-width: ${max}px) {
 			${data}

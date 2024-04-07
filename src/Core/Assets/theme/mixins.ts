@@ -8,7 +8,7 @@ export const mixins = {
 		justify-content: center;
 		align-items: center;
 	`,
-	getColumnStyle: (columnNumber: number) => {
+	getResponsiveColumnStyle: (columnNumber: number) => {
 		const isMobile = window.innerWidth <= breakpoints.mobile.maxWidth;
 
 		if (isMobile) {
@@ -39,7 +39,7 @@ export const mixins = {
 			margin-right: 10px;
 		`;
 	},
-	getContainerStyle: () => {
+	getResponsiveContainerStyle: () => {
 		const defaultStyle = css`
 			margin: 0 auto;
 
@@ -71,5 +71,19 @@ export const mixins = {
 
 			${defaultStyle}
 		`;
+	},
+	circle: (size: number) => css`
+		width: ${size}px;
+		height: ${size}px;
+		border-radius: 50%;
+	`,
+	applyConditionalStyle: ({
+		condition,
+		style,
+	}: {
+		condition?: boolean;
+		style: CSSText;
+	}): CSSText => {
+		return condition ? style : '';
 	},
 };

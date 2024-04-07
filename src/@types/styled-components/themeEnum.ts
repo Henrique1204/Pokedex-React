@@ -9,6 +9,9 @@ export type MixinsValuesEnum = keyof MixinsValues;
 export type ColorsValues = typeof colors;
 export type ColorsEnum = keyof ColorsValues;
 
+export type PokemonTypesColorValues = typeof colors.pokemonTypes;
+export type PokemonTypesColorEnum = keyof PokemonTypesColorValues;
+
 export type ResponsivesValues = typeof responsive;
 export type ResponsivesEnum = keyof ResponsivesValues;
 

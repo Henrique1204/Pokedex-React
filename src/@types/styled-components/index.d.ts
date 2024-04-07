@@ -7,6 +7,10 @@ import {
 	ResponsivesValues,
 } from './themeEnum';
 
+declare global {
+	export type CSSText = string | ReturnType<typeof css>;
+}
+
 declare module 'styled-components' {
 	export interface DefaultTheme {
 		colors: ColorsValues;
