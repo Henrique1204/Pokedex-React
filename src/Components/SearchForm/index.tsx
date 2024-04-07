@@ -1,11 +1,8 @@
 import React from 'react';
 
-import * as Styles from './styles';
+import { SearchFormProps } from './types';
 
-type SearchFormProps = React.InputHTMLAttributes<HTMLInputElement> & {
-	onChange: (value: string) => void;
-	onSubmit: () => void;
-};
+import * as Styles from './styles';
 
 export const SearchForm: IComponent<SearchFormProps> = ({
 	testId = 'search-form',
@@ -16,15 +13,14 @@ export const SearchForm: IComponent<SearchFormProps> = ({
 	const [isSearchingData, setIsSearchingData] = React.useState(false);
 
 	function handleOnChange({ target }: React.ChangeEvent<HTMLInputElement>) {
-		console.log(target.value);
 		onChange(target.value);
 	}
 
-	function handleOnSubmit() {
+	async function handleOnSubmit(e: any) {
 		try {
 			setIsSearchingData(true);
 
-			onSubmit();
+			await onSubmit(e);
 		} catch (e) {
 			console.error(e);
 		} finally {

@@ -8,7 +8,7 @@ export const Container = styled.div`
 `;
 
 export const SearchField = styled.input`
-	${({ theme }) => theme.mixins.getColumnStyle(4)}
+	${({ theme }) => theme.mixins.getResponsiveColumnStyle(4)}
 
 	padding: 8px 15px;
 	border: 1px solid ${({ theme }) => theme.colors.border};
@@ -38,7 +38,7 @@ export const SearchField = styled.input`
 `;
 
 export const SubmitButton = styled.button`
-	${({ theme }) => theme.mixins.getColumnStyle(2)}
+	${({ theme }) => theme.mixins.getResponsiveColumnStyle(2)}
 
 	padding: 8px;
 	border: none;
@@ -57,6 +57,10 @@ export const SubmitButton = styled.button`
 
 	&:hover {
 		background-color: ${({ theme }) => theme.colors.primary.dark};
+	}
+
+	&:disabled {
+		opacity: 0.6;
 	}
 
 	${({ theme }) =>
