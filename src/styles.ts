@@ -47,6 +47,13 @@ export const GlobalStyle = createGlobalStyle`
 		transform: translate3d(0, 0, 0);
 	}
 
+
+	ul {
+		padding: 0;
+		margin: 0;
+		list-style: none;
+	}
+
 	main {
 		padding: 60px 0;
 		min-height: 600px;
