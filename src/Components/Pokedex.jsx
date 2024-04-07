@@ -1,18 +1,16 @@
 import React, { Component } from 'react';
-import Card from './Card';
+import { Card } from './Card';
 import '../css/Pokedex.css';
 
 export default class Pokedex extends Component {
 	estrutura = (
 		<li>
 			<Card
-				isHome={false}
-				classes='carregando'
-				titulo='???'
-				caminho='img/pokebola.png'
-				altImg='Pokebola'
-				numero='#???'
-				legenda='???'
+				title='???'
+				imageSrc='img/pokebola.png'
+				imageAlt='Pokebola'
+				pokemonNumber='#???'
+				label='???'
 			/>
 		</li>
 	);
@@ -48,12 +46,11 @@ export default class Pokedex extends Component {
 			pokemons[i] = (
 				<li key={json.id}>
 					<Card
-						isHome={false}
-						titulo={json.name}
-						caminho={`img/${json.name}.png`}
-						altImg={json.name}
-						numero={`#${json.id.toString().padStart(3, '0')}`}
-						legenda={tiposSpan}
+						title={json.name}
+						imageSrc={`img/${json.name}.png`}
+						imageAlt={json.name}
+						pokemonNumber={`#${json.id.toString().padStart(3, '0')}`}
+						label={tiposSpan}
 					/>
 				</li>
 			);
