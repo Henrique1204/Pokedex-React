@@ -6,8 +6,9 @@ import { ThemeProvider } from 'styled-components';
 
 import theme from 'Core/Assets/theme';
 
+import { Home } from 'Pages/Home';
+
 import { Header } from 'Components/Header';
-import Home from 'Components/Home';
 import { Footer } from 'Components/Footer';
 import Pokedex from 'Components/Pokedex';
 

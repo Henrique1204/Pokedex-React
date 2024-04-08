@@ -26,9 +26,4 @@ export const GlobalStyle = createGlobalStyle`
 		margin: 0;
 		list-style: none;
 	}
-
-	main {
-		padding: 60px 0;
-		min-height: 600px;
-	}
 `;
