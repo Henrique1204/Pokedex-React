@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { SearchForm } from '../SearchForm';
+import { PokemonType } from '../PokemonType';
 import { Show } from '../Show';
 
 import { CardProps } from './types';
@@ -42,29 +43,15 @@ export const Card: IComponent<CardProps> = ({
 				const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
 				const json = await res.json();
 
-				const tipos = json.types.map((type: any) => type.type.name);
-				let tiposSpan;
-
-				if (tipos.length === 1) {
-					tiposSpan = (
-						<span className='tipos'>
-							<span className={tipos[0]}>{tipos[0]}</span>
-						</span>
-					);
-				} else {
-					tiposSpan = (
-						<span className='tipos'>
-							<span className={tipos[0]}>{`${tipos[0]} `}</span>|
-							<span className={tipos[1]}>{` ${tipos[1]}`}</span>
-						</span>
-					);
-				}
+				const tipos = json.types.map(
+					(type: any) => type.type.name
+				) as PokemonTypesColorEnum[];
 
 				const pokemon = {
 					nome: json.name,
 					id: json.id,
 					numero: `#${json.id.toString().padStart(3, '0')}`,
-					tipos: tiposSpan,
+					tipos: <PokemonType key={json.id} types={tipos} />,
 				};
 
 				pokemons.push(pokemon);

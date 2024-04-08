@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { Card } from 'Components/Card';
+import { PokemonType } from 'Components/PokemonType';
 
 import * as Styles from './styles';
 
@@ -26,37 +27,23 @@ export const Pokedex: IComponent = () => {
 			const req = await fetch(`https://pokeapi.co/api/v2/pokemon/${i + 1}`);
 			const json = await req.json();
 
-			const tipos = json.types.map((type: any) => type.type.name);
-			let tiposSpan: any;
-
-			if (tipos.length === 1) {
-				tiposSpan = (
-					<span className='tipos'>
-						<span className={tipos[0]}>{tipos[0]}</span>
-					</span>
-				);
-			} else {
-				tiposSpan = (
-					<span className='tipos'>
-						<span className={tipos[0]}>{`${tipos[0]} `}</span>|
-						<span className={tipos[1]}>{` ${tipos[1]}`}</span>
-					</span>
-				);
-			}
+			const tipos = json.types.map(
+				(type: any) => type.type.name
+			) as PokemonTypesColorEnum[];
 
 			setPokemons((prevPokemons) => {
 				const pokemonsCopy = [...prevPokemons];
 
 				pokemonsCopy[i] = (
-					<li key={json.id}>
+					<Styles.PokemonListItem key={json.id}>
 						<Card
 							title={json.name}
 							imageSrc={`img/${json.name}.png`}
 							imageAlt={json.name}
 							pokemonNumber={`#${json.id.toString().padStart(3, '0')}`}
-							label={tiposSpan}
+							label={<PokemonType key={json.id} types={tipos} />}
 						/>
-					</li>
+					</Styles.PokemonListItem>
 				);
 
 				return pokemonsCopy;
