@@ -40,5 +40,7 @@ export const colors = {
 		normal: '#888',
 		ice: '#2ad',
 		steel: '#b6b6b6',
+		ghost: '#94F',
+		dark: '#525',
 	},
 };
