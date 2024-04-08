@@ -5,7 +5,7 @@ import {
 	MixinsValues,
 	BreakpointsValues,
 	ResponsivesValues,
-} from './themeEnum';
+} from '../core/theme';
 
 declare global {
 	export type CSSText = string | ReturnType<typeof css>;
