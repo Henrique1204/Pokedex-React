@@ -16,16 +16,22 @@ export const SearchForm: IComponent<SearchFormProps> = ({
 		onChange(target.value);
 	}
 
-	async function handleOnSubmit(e: any) {
+	async function handleOnSubmit() {
 		try {
 			setIsSearchingData(true);
 
-			await onSubmit(e);
+			await onSubmit();
 		} catch (e) {
 			console.error(e);
 		} finally {
 			setIsSearchingData(false);
 		}
+	}
+
+	function handleSubmitInKeyPress(
+		event: React.KeyboardEvent<HTMLInputElement>
+	) {
+		if (event.key === 'Enter') handleOnSubmit();
 	}
 
 	return (
@@ -35,7 +41,7 @@ export const SearchForm: IComponent<SearchFormProps> = ({
 				type='text'
 				placeholder='#025'
 				onChange={handleOnChange}
-				onKeyPress={handleOnSubmit}
+				onKeyPress={handleSubmitInKeyPress}
 				{...props}
 			/>
 

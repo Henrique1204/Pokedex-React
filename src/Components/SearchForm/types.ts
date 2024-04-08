@@ -5,5 +5,5 @@ export type SearchFormProps = Omit<
 	'onChange' | 'onSubmit'
 > & {
 	onChange: (value: string) => void;
-	onSubmit: (e: any) => Promise<void>;
+	onSubmit: () => Promise<void>;
 };

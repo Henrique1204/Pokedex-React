@@ -48,7 +48,7 @@ export const Card: IComponent<CardProps> = ({
 				const pokemon = {
 					id: pokemonData.id,
 					nome: pokemonData.name,
-					numero: `#${pokemonData.id.toString().padStart(3, '0')}`,
+					numero: pokemonData.pokedexNumber,
 					tipos: <PokemonType key={pokemonData.id} types={pokemonData.types} />,
 				};
 
@@ -68,7 +68,7 @@ export const Card: IComponent<CardProps> = ({
 		setImageSrc(`img/${pokemon.nome}.png`);
 		setImageAlt(pokemon.nome);
 		setPokemonNumber(pokemon.numero);
-		setLabel(pokemon.tipo);
+		setLabel(pokemon.tipos);
 	}
 
 	function atualizarValor(valor: string) {
@@ -142,14 +142,12 @@ export const Card: IComponent<CardProps> = ({
 		}
 	}
 
-	async function eventoBusca(evento: any) {
+	async function eventoBusca() {
 		// Limpo o valor digitado pra ficar sem "#" no número e sem espaço no começo
 		const valor = searchValue.replace('#', '').trim();
 
 		// Testo se alguém apertou "Enter" ou se clicou no botão
-		if (evento.key === 'Enter' || evento.type === 'click') {
-			buscarPokemon(valor);
-		}
+		buscarPokemon(valor);
 	}
 
 	async function initialEffect() {
