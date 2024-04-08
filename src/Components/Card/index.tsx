@@ -6,6 +6,7 @@ import { Show } from '../Show';
 
 import { CardProps } from './types';
 import * as Styles from './styles';
+import { getPokemonById } from 'Core/Services/pokemon';
 
 const DEFAULT_STATE = {
 	title: 'Carregando dados...',
@@ -40,18 +41,15 @@ export const Card: IComponent<CardProps> = ({
 			let pokemons: any[] = [];
 
 			for (let i = 1; i <= 151; i++) {
-				const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}`);
-				const json = await res.json();
+				const { success, data: pokemonData, message } = await getPokemonById(i);
 
-				const tipos = json.types.map(
-					(type: any) => type.type.name
-				) as PokemonTypesColorEnum[];
+				if (!success || !pokemonData) throw new Error(message);
 
 				const pokemon = {
-					nome: json.name,
-					id: json.id,
-					numero: `#${json.id.toString().padStart(3, '0')}`,
-					tipos: <PokemonType key={json.id} types={tipos} />,
+					id: pokemonData.id,
+					nome: pokemonData.name,
+					numero: `#${pokemonData.id.toString().padStart(3, '0')}`,
+					tipos: <PokemonType key={pokemonData.id} types={pokemonData.types} />,
 				};
 
 				pokemons.push(pokemon);
@@ -183,7 +181,7 @@ export const Card: IComponent<CardProps> = ({
 	}, []);
 
 	return (
-		<Styles.Container isHome={isHome}>
+		<Styles.Container $isHome={isHome}>
 			<Styles.Title as={isHome ? 'h1' : 'h2'}>{title}</Styles.Title>
 
 			<Styles.ImageContainer>
