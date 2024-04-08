@@ -13,8 +13,8 @@ export const Header: IComponent = () => {
 
 			<nav>
 				<Styles.NavigationList>
-					{ROUTES.map(({ label, route }) => (
-						<li>
+					{ROUTES.map(({ label, route }, key) => (
+						<li key={`${key}-${label}`}>
 							<Styles.NavigationLink as={Link} to={route}>
 								{label}
 							</Styles.NavigationLink>

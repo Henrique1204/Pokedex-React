@@ -11,7 +11,7 @@ const rotate = keyframes`
 	}
 `;
 
-export const Container = styled.div<{ isHome?: boolean }>`
+export const Container = styled.div<{ $isHome?: boolean }>`
 	padding: 30px;
 	border-radius: 8px;
 
@@ -20,9 +20,9 @@ export const Container = styled.div<{ isHome?: boolean }>`
 	background-color: ${({ theme }) => theme.colors.gray.lightest};
 	box-shadow: 4px 4px 8px ${({ theme }) => theme.colors.shadow.box};
 
-	${({ theme, isHome }) =>
+	${({ theme, $isHome }) =>
 		theme.mixins.applyConditionalStyle({
-			condition: isHome,
+			condition: $isHome,
 			style: theme.mixins.getResponsiveColumnStyle(6),
 		})}
 `;

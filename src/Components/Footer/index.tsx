@@ -11,7 +11,7 @@ export const Footer: IComponent = () => {
 
 			<Styles.MembersListContainer>
 				{TEAM_MEMBERS.map(({ name, github }) => (
-					<Styles.MemberItem>
+					<Styles.MemberItem key={github.user}>
 						<Styles.MemberName>{name}</Styles.MemberName>{' '}
 						<Styles.MemberGithubLink href={github.link} target='_blank'>
 							<span>{github.user}</span>
