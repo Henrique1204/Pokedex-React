@@ -1,10 +1,12 @@
+import { ReactNode } from 'react';
+
 export type CardProps = {
 	title?: string;
 	isHome?: boolean;
 	imageSrc?: string;
 	imageAlt?: string;
 	pokemonNumber?: string;
-	label?: string;
+	label?: ReactNode;
 };
 
 export type LoadingProps = {

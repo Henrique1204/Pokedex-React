@@ -29,7 +29,7 @@ export const Card: IComponent<CardProps> = ({
 	const [pokemonNumber, setPokemonNumber] =
 		React.useState<string>(propsPokemonNumber);
 
-	const [label, setLabel] = React.useState<string>(propsLabel);
+	const [label, setLabel] = React.useState<React.ReactNode>(propsLabel);
 
 	const [searchValue, setSearchValue] = React.useState<string>('');
 	const [pokemonsList, setPokemonsList] = React.useState<any[]>([]);

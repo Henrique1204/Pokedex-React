@@ -7,10 +7,10 @@ import { ThemeProvider } from 'styled-components';
 import theme from 'Core/Assets/theme';
 
 import { Home } from 'Pages/Home';
+import { Pokedex } from 'Pages/Pokedex';
 
 import { Header } from 'Components/Header';
 import { Footer } from 'Components/Footer';
-import Pokedex from 'Components/Pokedex';
 
 import { GlobalStyle } from './styles';
 
