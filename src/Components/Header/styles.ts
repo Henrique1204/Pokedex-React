@@ -9,7 +9,7 @@ export const Container = styled.header`
 	letter-spacing: 1.5px;
 
 	${({ theme: { colors } }) => css`
-		background-image: ${`linear-gradient(to top, ${colors.gray.darkest}, ${colors.gray.dark})`};
+		background-image: ${`linear-gradient(to top, ${colors.gray.dark}, ${colors.gray.darkest})`};
 
 		box-shadow: 4px 4px 8px ${colors.shadow.box};
 	`}

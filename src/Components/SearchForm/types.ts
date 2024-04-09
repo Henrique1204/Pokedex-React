@@ -7,3 +7,8 @@ export type SearchFormProps = Omit<
 	onChange: (value: string) => void;
 	onSubmit: () => Promise<void>;
 };
+
+export type FormProps = Pick<
+	SearchFormProps,
+	'onSubmit' | 'onChange' | 'value'
+>;

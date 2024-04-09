@@ -1,19 +1,20 @@
 import React from 'react';
 
-import { Card } from 'Components/Card';
-import { PokemonType } from 'Components/PokemonType';
+import * as PokemonCard from 'Components/PokemonCard';
 
 import * as Styles from './styles';
 
 const PokemonListItem: IComponent = () => (
 	<Styles.PokemonListItem>
-		<Card
-			title='???'
-			imageSrc='img/pokebola.png'
-			imageAlt='Pokebola'
-			pokemonNumber='#???'
-			label='???'
-		/>
+		<PokemonCard.Card>
+			<PokemonCard.Title title='???' />
+
+			<PokemonCard.CardLoading />
+
+			<PokemonCard.PokedexNumber number='???' />
+
+			<PokemonCard.Label label={'???'} />
+		</PokemonCard.Card>
 	</Styles.PokemonListItem>
 );
 
@@ -36,13 +37,16 @@ export const Pokedex: IComponent = () => {
 
 				pokemonsCopy[i] = (
 					<Styles.PokemonListItem key={json.id}>
-						<Card
-							title={json.name}
-							imageSrc={`img/${json.name}.png`}
-							imageAlt={json.name}
-							pokemonNumber={`#${json.id.toString().padStart(3, '0')}`}
-							label={<PokemonType key={json.id} types={tipos} />}
-						/>
+						<PokemonCard.Card>
+							<PokemonCard.Title title={json.name} />
+							<PokemonCard.Image src={`img/${json.name}.png`} alt={json.name} />
+
+							<PokemonCard.PokedexNumber
+								number={`#${json.id.toString().padStart(3, '0')}`}
+							/>
+
+							<PokemonCard.PokemonTypes customKey={json.id} types={tipos} />
+						</PokemonCard.Card>
 					</Styles.PokemonListItem>
 				);
 

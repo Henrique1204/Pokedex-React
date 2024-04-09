@@ -1,6 +1,6 @@
 import styled, { css, keyframes } from 'styled-components';
 
-import { ErrorProps, LoadingProps } from './types';
+import { TypesProps } from './types';
 
 const rotate = keyframes`
 	from {
@@ -11,7 +11,7 @@ const rotate = keyframes`
 	}
 `;
 
-export const Container = styled.div<{ $isHome?: boolean }>`
+export const CardContainer = styled.div`
 	padding: 30px;
 	border-radius: 8px;
 
@@ -19,12 +19,6 @@ export const Container = styled.div<{ $isHome?: boolean }>`
 
 	background-color: ${({ theme }) => theme.colors.gray.lightest};
 	box-shadow: 4px 4px 8px ${({ theme }) => theme.colors.shadow.box};
-
-	${({ theme, $isHome }) =>
-		theme.mixins.applyConditionalStyle({
-			condition: $isHome,
-			style: theme.mixins.getResponsiveColumnStyle(6),
-		})}
 `;
 
 export const Title = styled.h1`
@@ -35,37 +29,22 @@ export const Title = styled.h1`
 	text-transform: capitalize;
 `;
 
-export const ImageContainer = styled.div<LoadingProps>`
+export const ImageContainer = styled.div`
 	${({ theme }) => theme.mixins.centerWithFlex()}
 	${({ theme }) => theme.mixins.circle(160)}
 
-	padding: 20px;
+	padding: 10px;
 	margin: 30px auto;
 
 	box-shadow: 2px 2px 4px 2px ${({ theme }) => theme.colors.shadow.box};
 	overflow: hidden;
-
-	${({ theme, isLoading }) =>
-		theme.mixins.applyConditionalStyle({
-			condition: isLoading,
-			style: css`
-				animation: ${rotate} 1s infinite;
-			`,
-		})}
 `;
 
-export const Image = styled.img<LoadingProps>`
+export const Image = styled.img`
 	margin: 0;
+	width: 100%;
 	max-width: 100%;
 	display: block;
-
-	${({ theme, isLoading }) =>
-		theme.mixins.applyConditionalStyle({
-			condition: isLoading,
-			style: css`
-				animation: ${rotate} 1s infinite;
-			`,
-		})}
 `;
 
 const paragraphStyle = css`
@@ -74,7 +53,7 @@ const paragraphStyle = css`
 	text-align: center;
 `;
 
-export const PokemonNumber = styled.p`
+export const PokedexNumber = styled.p`
 	${paragraphStyle}
 
 	max-width: 60px;
@@ -88,14 +67,35 @@ export const PokemonNumber = styled.p`
 	background-color: rgba(0, 0, 0, 0.1);
 `;
 
-export const CardLabel = styled.p<ErrorProps>`
+export const Label = styled.p`
+	${paragraphStyle}
+`;
+
+export const Error = styled.p`
 	${paragraphStyle}
 
-	${({ theme, hasError }) =>
-		theme.mixins.applyConditionalStyle({
-			condition: hasError,
-			style: css`
-				color: ${({ theme }) => theme.colors.status.error};
-			`,
-		})}
+	color: ${({ theme }) => theme.colors.status.error};
+`;
+
+export const PokemonTypes = styled.span`
+	margin: 0 auto;
+
+	font-size: 18px;
+	font-weight: bold;
+	text-align: center;
+	text-transform: capitalize;
+
+	color: #777;
+
+	display: block;
+`;
+
+export const Type = styled.span<TypesProps>`
+	margin: 0 5px;
+
+	color: ${({ theme, type }) => theme.colors.pokemonTypes[type]};
+`;
+
+export const CardLoading = styled(ImageContainer)`
+	animation: ${rotate} 1s infinite;
 `;

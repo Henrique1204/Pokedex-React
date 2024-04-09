@@ -7,12 +7,12 @@ import {
 
 import { PokemonMapped } from '../../@types/core/mappers/pokemon';
 
-export async function getPokemonById(
-	id: number
+export async function getPokemonByIdOrName(
+	idOrName: number | string
 ): Promise<ServiceReturn<PokemonMapped>> {
 	try {
 		const pokemonResponse = await fetch(
-			`https://pokeapi.co/api/v2/pokemon/${id}`
+			`https://pokeapi.co/api/v2/pokemon/${idOrName}`
 		);
 
 		const pokemon = (await pokemonResponse.json()) as PokemonResponse;
