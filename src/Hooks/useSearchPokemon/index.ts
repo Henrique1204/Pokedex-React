@@ -20,16 +20,22 @@ export const useSearchPokemon = (): useSearchPokemonReturn => {
 		PokemonMapped | undefined
 	>();
 
+	function sanitizeSearchText(searchText: string) {
+		return searchText.replace('#', '').toLowerCase();
+	}
+
 	async function handleSearchPokemonSubmit() {
 		try {
 			setIsSearchingPokemon(true);
 			setHasErrorInSearchPokemon(false);
 
+			const pokemonSearchTextSantized = sanitizeSearchText(pokemonSearchText);
+
 			const {
 				success,
 				data: PokemonSearched,
 				message,
-			} = await getPokemonByIdOrName(pokemonSearchText);
+			} = await getPokemonByIdOrName(pokemonSearchTextSantized);
 
 			if (!success || !PokemonSearched) throw new Error(message);
 
