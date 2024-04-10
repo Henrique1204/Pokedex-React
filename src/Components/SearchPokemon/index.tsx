@@ -53,7 +53,7 @@ export const SearchPokemon: IComponent<SearchPokemonProps> = ({
 
 			<PokemonCard.PokedexNumber number={content.pokedexNumber} />
 
-			<Show isShowing={!!hasSearchError}>
+			<Show isShowing={Boolean(!hasSearchError)}>
 				{hasPokemonSearched ? (
 					<PokemonCard.PokemonTypes
 						customKey={pokemonSearched!.name}
