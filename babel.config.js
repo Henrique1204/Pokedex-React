@@ -11,6 +11,7 @@ module.exports = {
 					'@types/*': './src/@types/*',
 					'Components/*': './src/Components/*',
 					'Core/*': './src/Core/*',
+					'Hooks/*': './src/Hooks/*',
 					'Assets/*': './src/Core/Assets/*',
 					'Constants/*': './src/Core/Constants/*',
 					'Helpers/*': './src/Core/Helpers/*',
