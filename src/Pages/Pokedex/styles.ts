@@ -34,6 +34,9 @@ export const Title = styled.h1`
 export const PokemonsList = styled.ul`
 	${({ theme }) => theme.mixins.centerWithFlex()}
 
+	padding-top: 2rem;
+
+	gap: 1.5rem 0;
 	flex-wrap: wrap;
 `;
 

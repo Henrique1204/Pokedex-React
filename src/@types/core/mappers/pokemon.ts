@@ -1,5 +1,5 @@
 export type PokemonMapped = {
-	id: number;
+	id: number | string;
 	name: string;
 	pokedexNumber: string;
 	spriteSrc: string;

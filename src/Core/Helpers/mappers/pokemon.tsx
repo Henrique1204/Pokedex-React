@@ -4,7 +4,8 @@ import { PokemonMapped } from '../../../@types/core/mappers/pokemon';
 export function mapperPokemon({
 	id,
 	name,
-	sprites,
+	sprite,
+	pokedexNumber,
 	types,
 }: PokemonResponse): PokemonMapped {
 	const CHAR_LENGTH = 3;
@@ -12,8 +13,8 @@ export function mapperPokemon({
 	return {
 		id,
 		name,
-		pokedexNumber: `#${id.toString().padStart(CHAR_LENGTH, '0')}`,
-		spriteSrc: sprites.front_default,
-		types: types.map(({ type }) => type.name),
+		pokedexNumber: `#${pokedexNumber.toString().padStart(CHAR_LENGTH, '0')}`,
+		spriteSrc: sprite,
+		types,
 	};
 }

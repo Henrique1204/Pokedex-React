@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { getPokemonByIdOrName } from 'Core/Services/pokemon';
+import { getPokemonByPokedexNumberOrName } from 'Core/Services/pokemon';
 
 import { lastPokemonSearchedStorage } from 'Core/Helpers/localStorage/lastPokemonSearched';
 
@@ -35,7 +35,7 @@ export const useSearchPokemon = (): useSearchPokemonReturn => {
 				success,
 				data: PokemonSearched,
 				message,
-			} = await getPokemonByIdOrName(pokemonSearchTextSantized);
+			} = await getPokemonByPokedexNumberOrName(pokemonSearchTextSantized);
 
 			if (!success || !PokemonSearched) throw new Error(message);
 

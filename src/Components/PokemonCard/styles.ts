@@ -33,8 +33,10 @@ export const ImageContainer = styled.div`
 	${({ theme }) => theme.mixins.centerWithFlex()}
 	${({ theme }) => theme.mixins.circle(160)}
 
-	padding: 10px;
+	padding: 2rem;
 	margin: 30px auto;
+
+	background: ${({ theme }) => theme.colors.white};
 
 	box-shadow: 2px 2px 4px 2px ${({ theme }) => theme.colors.shadow.box};
 	overflow: hidden;
