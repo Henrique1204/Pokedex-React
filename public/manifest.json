@@ -1,15 +1,15 @@
 {
-  "short_name": "Pokedex React",
-  "name": "Criar uma Pokedex com React",
-  "icons": [
-    {
-      "src": "ico.png",
-      "sizes": "16x16",
-      "type": "image/x-icon"
-    }
-  ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#ffffff",
-  "background_color": "#dadada"
+	"short_name": "Pokedex React",
+	"name": "Criar uma Pokedex com React",
+	"icons": [
+		{
+			"src": "ico.png",
+			"sizes": "16x16",
+			"type": "image/x-icon"
+		}
+	],
+	"start_url": ".",
+	"display": "standalone",
+	"theme_color": "#ffffff",
+	"background_color": "#dadada"
 }
